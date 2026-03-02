@@ -1,2 +1,2 @@
-# summer_boy
+# Sunshine
 Our beloved Bolivar summer boy: Tequila! fangame

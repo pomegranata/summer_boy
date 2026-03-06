@@ -14,8 +14,8 @@ image teq serious:
     "images/teq_serious.png"
     zoom 1.8
 
-image teq smile:
-    "images/teq_smile.png"
+image teq thinking:
+    "images/teq_thinking.png"
     zoom 1.8
 
 image teq surprise viewer:
@@ -24,6 +24,10 @@ image teq surprise viewer:
 
 image teq surprise up:
     "images/teq_surprise_2.png"
+    zoom 1.8
+
+image teq serious:
+    "images/teq_serious.png"
     zoom 1.8
 
 image bg corridor:
@@ -40,5 +44,9 @@ image bg bar:
 
 image bg training:
     "images/bg_trainingcom.png"
+    zoom 1.88
+
+image bg black screen:
+    "images/bg_black_screen.png"
     zoom 1.88
 

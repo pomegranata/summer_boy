@@ -17,7 +17,7 @@ label start:
     "Stationary Security Service..."
     "Check."
 
-    scene bg corridor
+    scene bg corridor with dissolve
 
     play music "farce.mp3"
 
@@ -42,14 +42,21 @@ label start:
     doc "But I'm not hungry yet..."
     doc "Hmm..."
 
+    stop music
+
+    play sound "thud.wav"
+    show bg corridor with vpunch
+
     "{i} Thud! {/i}"
-    # thud sfx and screen shake
 
     myst "Whoa, wha-"
 
-    show teq surprise viewer at def_pos
+    show teq surprise viewer at def_pos with Dissolve(1.0)
     
     teq "Doctor! You startled me!"
+
+    play music "farce.mp3"
+
     teq "I thought you were a ghost or something!"
 
     doc "Oh, I'm so sorry! I didn't mean to-"
@@ -97,12 +104,12 @@ label start:
     
     show teq normal at def_pos
 
-    teq "How about this."
+    teq "How about this..."
     teq "I'm going to the training compound to test out my newly polished sword."
     
     show teq happy at def_pos
 
-    teq "Maybe I'll teach you one or two moves of swordmanship."
+    teq "Maybe I'll teach you one or two moves about swordmanship."
     teq "In case you need to defend yourself on the battlefield."
 
     show teq normal at def_pos
@@ -111,7 +118,8 @@ label start:
     doc "Scary."
     doc "Really scary."
     doc "But, don't get me wrong though!"
-    doc "It's just, I haven't trained my physical combat skills for a long time."
+    doc "It's just..."
+    doc "I haven't practiced my physical combat ability for a long time."
     doc "I might be a little rusty..."
     doc "{i} Did I ever do some training at all? {/i}"
 
@@ -139,8 +147,11 @@ label start:
     "Tequila took my hand and pulled me alongside him."
     "Dragging me away from the landship corridor."
 
-    scene bg black screen
+    stop music
+    scene bg black screen with dissolve
     hide teq normal
+
+    # play run sfx
 
     "Rushing our way out to the training compound."
     "Sucessfully pulling me out of my wandering thoughts."
@@ -160,25 +171,25 @@ label start:
     doc "{i} Amiya, help me... {/i}"
 
     hide teq normal
-    ## play running sfx
 
     "After running along for a moment, Tequila comes in halt when we reached the Training Compund."
     "Not even the closed door could stop his radiant energy."
     "He opens the door and walks in without even knocking,"
     "As if he lives in this place."
-
-    scene bg training
-    
-    show teq normal at def_pos
-
     "Then he stops abruptly so suddenly."
+
+    play sound "thud.wav"
+    scene bg training with vpunch
+    show teq normal at def_pos with vpunch
+
     "{i} Thud! {/i}"
-    ## thud sfx. again
 
     doc "{i} That was twice for this afternoon already... {/i}"
 
     "He turns his head around and looking at me straight in the eye."
     "Yet still with that sunny smile on his face."
+
+    play music "farce.mp3"
 
     teq "Here we are, Doctor!"
 
@@ -197,9 +208,9 @@ label start:
     
     show teq normal at def_pos
 
-    teq "Does running that short already take all of your breath away?"
+    teq "Does running just a few steps like that already take all of your breath away?"
 
-    doc "It-it was so sudden."
+    doc "It-it was so sudden!"
     doc "Give me an early warning first next time, please."
 
     show teq happy at def_pos
@@ -293,6 +304,8 @@ label start:
 
     show teq happy at def_pos
 
+    # a bit of pause / delay?
+
     teq "All right, you can drop your leg now."
 
     doc "{i} Phew, that was a close one... {/i}"
@@ -324,19 +337,22 @@ label start:
 
     myst "Careful there!"
 
-    "As I prepare myself to land on the concrete surface of the Training Compund"
+    "As I prepare myself to land on the concrete surface of the Training Compund..."
     "I feel something firm and solid on my back."
-    "The lingering scent of fresh summer breeze and sea salt vaguely introducing themselves into my sense of smell."
+    "The lingering scent of sun-warmed skin vaguely introducing themselves into my sense of smell."
     "A warm pair of strong arms securing my unsteady figure."
 
-    "{i} Thud! {/i}"
+    stop music fadeout 0.5
 
-    #sfx thud. again and again.
+    play sound "thud.wav"
+    "{i} Thud! {/i}"
 
     doc "{i} That was three times already! {/i}"
 
     teq "Doctor!"
     teq "A-are you alright?"
+
+    play music warm
     
     "Like a ghostly touch, a lukewarm puff of breath caresses my right cheek."
     "A pair of steady biceps around my torso."
@@ -352,18 +368,18 @@ label start:
     "Cautiously, he lift my upper body up."
     "Slowly until my feet standing upright."
     "Yet still, he keep his one arm around my back."
-    "Offering his own way of a nonvocal support"
+    "Offering his own way of a nonvocal support."
 
     show teq concern at def_pos
     
     teq "You scared me there, Doctor!"
 
-    doc "I'm so sorry for that."
+    doc "I... I'm so sorry for that."
 
     show teq serious at def_pos
 
     teq "No."
-    teq "I'm the one who should apologise."
+    teq "I am the one who should apologise."
 
     doc "No, Tequila."
     doc "It was my fault."
@@ -375,10 +391,10 @@ label start:
     
     teq "Still, Doctor..."
     teq "It was my idea to bring you all the way here."
-    teq "That was also my idea to have you do all that warm-up."
+    teq "That was also my idea to have you do all those warm-ups."
     teq "I'm the one responsible for your injury."
 
-    doc "Tequila, don't say that—"
+    doc "Tequila, don't say that..."
 
     teq "Stop taking all the blame, Doctor."
     teq "I saw you apologizing for everything."
@@ -391,85 +407,143 @@ label start:
 
     show teq normal at def_pos
 
-    teq "So, how about this..."
-    teq "I'll treat you for a drink tonight."
+    doc "I..."
+    doc "I don't want my operators to see me as a strict or a scary commander."
+    doc "I want them to approach me, talk to me, and laugh with me without any fears..."
+    doc "{i} The Ghost of Babel days are over. {/i}"
+    doc "{i} And I intend to keep it that way. {/i}"
+    doc "{i} For the sake of the new future of everyone. {/i}"
+    doc "{i} This Terra is ours. {/i}"
+    doc "{i} And these days are Rhodes Island's days. {/i}"
+
+    teq "That is a very kind of you, Doctor."
+    teq "As someone as important on this ship like you,"
+    teq "Yet still being so tuned in to how everyone perception about you."
+    teq "Just so that they feel safe around you."
+
+    # a bit of pause / delay
+
+    show teq thinking at def_pos
     
+    teq "How about this..."
+
+    show teq normal at def_pos
+
+    teq "A night out."
+    teq "With me."
+    teq "And everyone on landship."
+    teq "I'll treat you to a drink tonight."
+
     show teq happy at def_pos
 
+    teq "Whenever you're free."
     teq "Anything you want, however you want."
     teq "Specially, in my bar."
-    teq "You call my name and I'll go to your table right away"
+    teq "You call my name and I'll go to your table right away."
     teq "As long as you can handle the alcohol."
 
-    doc "But tonight is Friday night."
-    doc "Tonight will be busy night for a bar known for its exceptional quality like yours."
+    show teq normal at def_pos
+
+    doc "But tonight is Friday night?"
+    doc "Tonight will be a busy night for a bar known for its exceptional quality like yours."
+
+    show teq happy at def_pos
 
     teq "Hahaha, worry not, Doctor."
     teq "Rafaela and I have survived many busy weekend nights."
     teq "Nothing phase us anymore."
     teq "And having a special guest for once in a while is a novel experience."
+    teq "Also everyone on the bar is more than happy to have you with them to share some drinks together."
 
     show teq normal at def_pos
 
     teq "So, how about it, Doctor?"
     teq "Free drink and special service."
+    teq "With me."
+    teq "And with everyone on this ship."
 
-    # branch out yes or no
-    # if yes:
+    menu:
+        "Spend the night with him":
+            jump potent_date
+        "Spend the night with...":
+            jump decline_date
 
-    doc "All right, I accept your offer."
-    doc "But, in one condition..."
+    label potent_date:
+        
+        doc "All right, I accept your offer."
+        doc "But, in one condition..."
 
-    show teq happy at def_pos
+        show teq happy at def_pos
 
-    teq "A rare demand from our cherised Doctor."
-    
-    show teq normal at def_pos
+        teq "A rare demand from our cherised Doctor."
+        
+        show teq normal at def_pos
 
-    teq "Shot the shoot, Doctor."
-    teq "I'm all ears."
+        teq "Shot the shoot, Doctor."
+        teq "I'm all ears."
 
-    doc "Tonight will be my off-duty."
-    doc "So, please.."
-    doc "Just call my name." # ask for the player's name, use input text
+        doc "Tonight will be my off duty."
+        doc "So, please.."
+        doc "Just call my name."
+        doc "Not Doctor nor anything."
+        doc "Just me. As myself."
+        
+        $ player_name = renpy.input("I am... ", length=32)
+        $ player_name = player_name.strip()
 
-    teq "Easy enough."
-    teq "I want you to do the same to me."
+        teq "Easy enough."
+        teq "I want you to do the same to me."
 
-    doc "Calling you by your real name?"
+        doc "Calling you by your real name?"
 
-    show teq happy at def_pos
+        teq "Yup."
 
-    teq "Yup."
-    teq "Ernesto Salas,"
-    teq "Will be at your service tonight."
+        show teq happy at def_pos
 
-    # describe the smile
+        teq "Ernesto Salas."
+        teq "Will be at your service tonight."
 
-    teq "Take a rest, Doctor."
-    teq "And see you tonight in my bar."
-    teq "I'll be waiting for you, " # add player's name
+        # describe his smile
 
-    # if no:
+        "That ever so brightly golden sunshine Perros's smile blinds the room."
+        "I can't help but to smile too at his earnest friendly gesture."
+        "This is what I've been working on so far."
+        "For my operator to easily express themselves around me."
+        "For him to keep smiling so brightly."
+        
+        teq "Now, rest your leg for a bit, Doctor."
+        teq "And see you tonight in my bar."
+        teq "I'll be waiting for you, [player_name]."
 
-    show teq surprised viewer at def_pos
+        return
 
-    doc "I'm sorry, Tequila."
-    doc "I don't think I have the time for a night out tonight..."
-    doc "No hard feelings, alright?"
+    label decline_date:
 
-    show teq concern at def_pos
+        play music distress
+        
+        doc "I'm sorry, Tequila."
 
-    teq "It's alright, Doctor..."
-    teq "I should've known you're a busy person."
-    teq "With busy schedules and such."
-    teq "It's my my own stupidity and indifference."
-    teq "Sorry for forcing you all the way here."
-    teq "And asking you out without knowing your schedule."
+        show teq surprise viewer at def_pos
 
-    doc "... I'll bid my goodbye then."
+        doc "I don't think I have the time for a night out tonight..."
+        doc "No hard feelings, alright?"
 
-    teq "Right..."
-    teq "Hope you gave a pleasant weekend, Doc."
+        show teq concern at def_pos
+
+        teq "It's alright, Doctor..."
+        teq "I should've known you're a busy person."
+        teq "With busy schedules and such."
+        teq "It's my my own stupidity and indifference."
+        teq "Sorry for forcing you all the way here."
+        teq "And asking you out without considering how busy you are as the field commander of this ship."
+
+        doc "Once again, I apologize, Tequila."
+
+        teq "It's alright..."
+
+        doc "... I'll bid my goodbye then."
+
+        teq "Right..."
+        teq "Hope you have a pleasant weekend, Doctor."
 
     return

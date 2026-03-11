@@ -41,6 +41,7 @@ label start:
     doc "Or maybe to the cafetaria?"
     doc "But I'm not hungry yet..."
     doc "Hmm..."
+    doc "What should I do..."
 
     stop music
 
@@ -106,10 +107,11 @@ label start:
 
     teq "How about this..."
     teq "I'm going to the training compound to test out my newly polished sword."
+    teq "And keeping shape of my swordsmanship."
     
     show teq happy at def_pos
 
-    teq "Maybe I'll teach you one or two moves about swordmanship."
+    teq "Maybe I'll teach you one or two moves."
     teq "In case you need to defend yourself on the battlefield."
 
     show teq normal at def_pos
@@ -151,7 +153,7 @@ label start:
     scene bg black screen with dissolve
     hide teq normal
 
-    # play run sfx
+    play sound "run.wav" loop 
 
     "Rushing our way out to the training compound."
     "Sucessfully pulling me out of my wandering thoughts."
@@ -165,7 +167,7 @@ label start:
 
     teq "Oh, you're such a bad liar, Doctor!"
     teq "Just loosen up a bit and have fun with me!"
-    teq "I will ensure that you experience the greatest joy of your life!"
+    teq "I will ensure you experience the greatest joy of your life!"
 
     doc "I-I'm not so sure about that..."
     doc "{i} Amiya, help me... {/i}"
@@ -203,7 +205,7 @@ label start:
     doc "{i} Exhale...{/i}"
     doc "{i} Inhale...{/i}"
     doc "{i} Exhale...{/i}"
-    doc "{i} I can do this. I can do this...{/i}"
+    doc "{i} I can do this. I can do this. I can do this...{/i}"
     doc "{i} It's just a friendly duel, right? It's not like he's going to actually hurt me or anything...{/i}"
     
     show teq normal at def_pos
@@ -235,17 +237,19 @@ label start:
     teq "All right, let's get to it!"
 
     doc "{i} Huh? {/i}"
-    doc "{i} Did his tail just wag? {/i}" 
+    doc "{i} Did his tail just wag? {/i}"
 
     show teq normal at def_pos
 
     teq "Now, now, first thing first, Doctor..."
     teq "Let's get you all warmed up first, alright?"
+    teq "By doing some basic body stretches before we dive deeper into swordmanship techniques."
     teq "Don't want you to put sudden strain on those delicate muscles, do we?"
+    teq "And causing you in some kind of injuries."
     
     show teq happy at def_pos
 
-    teq "Or Amiya will kill me."
+    teq "Because Amiya will kill me if I put you in harm's way."
 
     doc "That..."
     doc "Probably is the best idea..."
@@ -256,7 +260,7 @@ label start:
 
     hide teq normal
 
-    "I just nods along and follows this energetic perro's lead."
+    "I just nods along and follows this energetic golden retriever's lead."
     "Lifting my arms up and down."
     "Left and right."
     "Forward and backward."
@@ -273,7 +277,7 @@ label start:
 
     show teq happy at def_pos
 
-    teq "Next, lets do some leg stretches too."
+    teq "Next, let's do some leg stretches too."
     teq "I know you spend most of your days sitting down in your office."
     teq "Writing down reports, planning strategies, and all of that paperwork stuff."
     
@@ -295,6 +299,9 @@ label start:
     teq "Just a bit more..."
     teq "And a bit more..."
 
+    scene bg training with vpunch
+    show teq normal at def_pos with vpunch
+
     doc "{i} I'm losing my balance!{/i}"
     doc "{i} I can't hold it up anymore!{/i}"
 
@@ -304,7 +311,7 @@ label start:
 
     show teq happy at def_pos
 
-    # a bit of pause / delay?
+    pause 0.5
 
     teq "All right, you can drop your leg now."
 
@@ -322,6 +329,8 @@ label start:
 
     "Slowly but surely, I managed to lift my foot slightly off the ground."
     
+    # i think it's better if we add more narration as to not make the game feels rushed?
+
     doc "!!!!!"
 
     "Suddenly, my leg just gave away."
@@ -421,7 +430,7 @@ label start:
     teq "Yet still being so tuned in to how everyone perception about you."
     teq "Just so that they feel safe around you."
 
-    # a bit of pause / delay
+    pause 0.5
 
     show teq thinking at def_pos
     
@@ -449,11 +458,12 @@ label start:
 
     show teq happy at def_pos
 
-    teq "Hahaha, worry not, Doctor."
+    teq "Hahaha."
+    teq "Don't you worry about anything, Doctor."
     teq "Rafaela and I have survived many busy weekend nights."
     teq "Nothing phase us anymore."
     teq "And having a special guest for once in a while is a novel experience."
-    teq "Also everyone on the bar is more than happy to have you with them to share some drinks together."
+    teq "Also everyone on the bar is more than happy to have you with them to share some drinks and stories together."
 
     show teq normal at def_pos
 
@@ -464,11 +474,11 @@ label start:
 
     menu:
         "Spend the night with him":
-            jump potent_date
-        "Spend the night with...":
+            jump accpet_date
+        "Spend the night...":
             jump decline_date
 
-    label potent_date:
+    label accpet_date:
         
         doc "All right, I accept your offer."
         doc "But, in one condition..."
@@ -503,47 +513,87 @@ label start:
         teq "Ernesto Salas."
         teq "Will be at your service tonight."
 
-        # describe his smile
-
-        "That ever so brightly golden sunshine Perros's smile blinds the room."
+        "That ever so brightly golden retreiver's sunny smile blinds the room."
         "I can't help but to smile too at his earnest friendly gesture."
-        "This is what I've been working on so far."
-        "For my operator to easily express themselves around me."
-        "For him to keep smiling so brightly."
+        
+        doc "{i} This is what I've been working on so far. {/i}"
+        doc "{i} For my operator to easily express themselves around me. {/i}"
+        doc "{i} For him to keep smiling so brightly. {/i}"
+        doc "{i} For him to keep radiating his endless positive energy. {/i}"
         
         teq "Now, rest your leg for a bit, Doctor."
+        teq "And maybe put on some ice bath for ten to twenty minutes."
         teq "And see you tonight in my bar."
         teq "I'll be waiting for you, [player_name]."
+
+        scene bg black screen
+
+        "A quiet footsteps echoing through the corridor."
+        "The softness of summer breeze lingers through the landship's windows."
+        "The early summer greets the everyone on the Rhodes Island with the joy and happyness."
+
+        doc "{i} Another season... {/i}"
+        doc "{i} New tasks. {/i}"
+        doc "{i} New people. {/i}"
+        doc "{i} New operators. {/i}"
+        doc "{i} New memories. {/i}"
+        doc "Alright, let's do this!"
 
         return
 
     label decline_date:
 
+        # make this part longer
+
         play music distress
         
+        doc "I..."
         doc "I'm sorry, Tequila."
 
         show teq surprise viewer at def_pos
 
-        doc "I don't think I have the time for a night out tonight..."
+        doc "I don't think..."
+        doc "I can go for a night out tonight..."
+        doc "Please,"
         doc "No hard feelings, alright?"
 
-        show teq concern at def_pos
+        teq "But, Doctor! Why..."
 
+        show teq concern at def_pos
+ 
+        teq "....."
+        teq "I get it."
         teq "It's alright, Doctor..."
         teq "I should've known you're a busy person."
         teq "With busy schedules and such."
-        teq "It's my my own stupidity and indifference."
+        teq "It's my own stupidity and indifference."
         teq "Sorry for forcing you all the way here."
         teq "And asking you out without considering how busy you are as the field commander of this ship."
 
         doc "Once again, I apologize, Tequila."
 
-        teq "It's alright..."
+        teq "Don't mind it, Doctor."
 
         doc "... I'll bid my goodbye then."
+        doc "Good luck with tonight rush hour."
 
         teq "Right..."
+        teq "Thank you for your kind words."
         teq "Hope you have a pleasant weekend, Doctor."
 
+        scene bg black screen
+
+        "A quiet footsteps echoing through the corridor."
+        "The absence of usual commotion deafening the ears."
+        "The summer's heatwaves will great everyone on the ship very harshly."
+
+        doc "{i} Did I do something right? {/i}"
+        doc "{i} Rejecting his offer like that? {/i}"
+        doc "{i} And lied to him in doing so? {/i}"
+        "This is me who you despise so much,"
+        "Doctor of Rhodes Island."
+        "You can't get away from your your past."
+
     return
+
+return

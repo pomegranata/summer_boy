@@ -31,9 +31,9 @@ label start:
 
     doc "Uhhh, what should I do now?"
     doc "I have nothing to do for the rest of the day..."
-    doc "I guess I can just wander around the ship for a bit..."
+    doc "I guess I can just wander around the ship for a bit."
     doc "Maybe something interesting will happen?"
-    doc "Or maybe I can just have a nice walk and enjoy the scenery?"
+    doc "Or maybe I can just have a nice walk and enjoy the landship's scenery?"
     doc "To the upper deck, maybe?"
     doc "The weather is nice up there..."
     doc "Or to the lower deck?"
@@ -52,24 +52,42 @@ label start:
 
     myst "Whoa, wha-"
 
-    show teq surprise viewer at def_pos with Dissolve(1.0)
+    doc "Ah!"
+    doc "I'm so sorry!"
     
-    teq "Doctor! You startled me!"
+    myst "Doctor! You startled me!"
+
+    show teq surprise viewer at def_pos with Dissolve(1.0)
 
     play music "farce.mp3"
 
     teq "I thought you were a ghost or something!"
 
-    doc "Oh, I'm so sorry! I didn't mean to-"
+    doc "Oh, I'm really, really sorry!"
+    doc "I didn't mean to-"
 
     show teq normal at def_pos
 
     teq "Jeez, what's going on inside that briliant head of yours, huh?"
-    teq "To the point of bumping me?"
+    teq "To the point of almost knocking me down?"
+
+    show teq happy at def_pos
+
+    teq "Almost."
 
     doc "It's nothing really..."
     
+    show teq normal at def_pos
+
     teq "Liar."
+
+    doc "Huh?"
+
+    teq "You're lying."
+    
+    show teq happy at def_pos
+    
+    teq "I can that from your looks."
     teq "Spill it out, Doctor."
     teq "What's going on inside that head of yours?"
     
@@ -327,7 +345,18 @@ label start:
 
     hide teq normal at def_pos
 
-    "Slowly but surely, I managed to lift my foot slightly off the ground."
+    "Slowly,."
+    "And surely, I managed to lift my foot slightly off the ground."
+
+    show teq happy at def_pos
+
+    teq "Delightful."
+
+    show teq normal at def_pos
+    
+    teq "Keep up the pace and you're doing well."
+
+    
     
     # i think it's better if we add more narration as to not make the game feels rushed?
 

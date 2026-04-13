@@ -354,11 +354,19 @@ label start:
 
     show teq normal at def_pos
     
-    teq "Keep up the pace and you're doing well."
+    teq "Keep up the pace, Doctor."
+    teq "You are doing well."
 
-    
-    
     # i think it's better if we add more narration as to not make the game feels rushed?
+    # awlaallala i have no idea
+
+    "Just a bit more..."
+    "Everything is going well..."
+    "Everything will be alright."
+    "Take a deep breath."
+    "And focus on the moment."
+    "Stay here and now."
+    "With him guiding you."
 
     doc "!!!!!"
 
@@ -518,7 +526,7 @@ label start:
         
         show teq normal at def_pos
 
-        teq "Shot the shoot, Doctor."
+        teq "Shoot your shot, Doctor."
         teq "I'm all ears."
 
         doc "Tonight will be my off duty."
@@ -572,9 +580,22 @@ label start:
 
     label decline_date:
 
-        # make this part longer
-
         play music distress
+
+        "The air around the landship feels pressurizingly heavy."
+        "The heavy kind of air before the storm."
+        "The hotness of trapped heatwaves."
+        "Heavy and suffocating."
+        
+        "The distant voice of the speaker."
+        "Ever so mechanical and toneless."
+
+        "Weather Forecast..."
+        "Heavy rain and thunderstorm."
+        "Precipitation is predicted to be heavy in the next few days."
+        "And in between, "
+        "The start of the summer's heatwaves is expected to arrives earlier than usual this year."
+
         
         doc "I..."
         doc "I'm sorry, Tequila."
@@ -622,6 +643,8 @@ label start:
         "This is me who you despise so much,"
         "Doctor of Rhodes Island."
         "You can't get away from your your past."
+        "This is me."
+        "The Ghost of Babel."
 
     return
 

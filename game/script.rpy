@@ -33,15 +33,31 @@ label start:
     doc "I have nothing to do for the rest of the day..."
     doc "I guess I can just wander around the ship for a bit."
     doc "Maybe something interesting will happen?"
-    doc "Or maybe I can just have a nice walk and enjoy the landship's scenery?"
+    doc "Or maybe I can just have a nice walk and enjoy the landship's decorations?"
     doc "To the upper deck, maybe?"
     doc "The weather is nice up there..."
     doc "Or to the lower deck?"
-    doc "Maybe I missed something down there?"
+    doc "Maybe I missed something down the power room?"
     doc "Or maybe to the cafetaria?"
     doc "But I'm not hungry yet..."
     doc "Hmm..."
     doc "What should I do..."
+
+    "The changing scenery of the landship's walls and windows passing by."
+    "Greyish metal walls."
+    "Orange painted strips."
+    "Hanging neon lights."
+    "And monitor screens showing the landship's status, news, weather forecast, and any kind of information for every residents."
+    "The usual chatter of the speakers providing a white background noise to the wandering thoughts."
+
+    doc "Agh, I can't decide what to do with my free time!"
+    doc "{i} Don't tell me I've been holed up in paperworks for so long... {/i}"
+    doc "{i} And as a result, {/i}"
+    doc "{i} Me...{/i}"
+    doc "{i} Forgetting how to spend my free time. {/i}"
+    doc "{i} Or any kind of activities that is not paperwork-related... {/i}"
+    doc "{i} I'm so out of touch with the world around me... {/i}"
+    doc "That's a scary thought!"
 
     stop music
 
@@ -61,15 +77,15 @@ label start:
 
     play music "farce.mp3"
 
-    teq "I thought you were a ghost or something!"
+    teq "I thought you were a falling metal crab or something!"
 
-    doc "Oh, I'm really, really sorry!"
+    doc "I- I'm really, really sorry!"
     doc "I didn't mean to-"
 
     show teq normal at def_pos
 
     teq "Jeez, what's going on inside that briliant head of yours, huh?"
-    teq "To the point of almost knocking me down?"
+    teq "To the point of you almost made me fall over?"
 
     show teq happy at def_pos
 
@@ -87,7 +103,7 @@ label start:
     
     show teq happy at def_pos
     
-    teq "I can that from your looks."
+    teq "I can tell that from your face."
     teq "Spill it out, Doctor."
     teq "What's going on inside that head of yours?"
     
@@ -102,12 +118,14 @@ label start:
     teq "Or a bad day?"
 
     doc "No, no, no."
-    doc "It's not like that..."
+    doc "It's nothing like that..."
     doc "I did meet Amiya and Dr. Kal'tsit today."
-    doc "But they didn't scold me or give me a hard time at all."
+    doc "But they didn't scold me or gave me a hard time at all."
     doc "I was just busy wondering what should I do..."
     doc "I finished all of my work for the week already."
     doc "And I have nothing to do for the rest of the day..."
+    doc "{i} Honestly though, {/i}"
+    doc "{i} I don't even know about what to do for the weekends too... {/i}"
 
     show teq happy at def_pos
     
@@ -115,12 +133,16 @@ label start:
 
     show teq normal at def_pos
 
-    teq "I thought you were having another terrible day."
+    teq "I thought you were having another terrible afternoon."
 
     show teq concern at def_pos
 
-    teq "I don't want to see you having that sad face, Doctor..."
-    
+    teq "I honestly don't want to you having that sad face, Doctor..."
+
+    show teq thinking at def_pos
+
+    teq "Ah!"
+
     show teq normal at def_pos
 
     teq "How about this..."
@@ -129,7 +151,7 @@ label start:
     
     show teq happy at def_pos
 
-    teq "Maybe I'll teach you one or two moves."
+    teq "Maybe I can teach you one or two moves."
     teq "In case you need to defend yourself on the battlefield."
 
     show teq normal at def_pos
@@ -159,19 +181,20 @@ label start:
     teq "No promises though."
 
     show teq normal at def_pos
-
+    
     teq "Anyway..."
 
     doc "!!!!!"
 
-    "Tequila took my hand and pulled me alongside him."
+
+    play sound "<loop 2 to 6>running.wav"
+
+    "Tequila took my hand and pulled me to his side."
     "Dragging me away from the landship corridor."
 
     stop music
     scene bg black screen with dissolve
     hide teq normal
-
-    play sound "run.wav" loop 
 
     "Rushing our way out to the training compound."
     "Sucessfully pulling me out of my wandering thoughts."
@@ -183,11 +206,14 @@ label start:
 
     show teq happy at def_pos
 
-    teq "Oh, you're such a bad liar, Doctor!"
+    teq "Oh? Are you sure about that?"
+    teq "Because from what I see..."
+    teq "You're such a bad liar, Doctor!"
     teq "Just loosen up a bit and have fun with me!"
     teq "I will ensure you experience the greatest joy of your life!"
 
-    doc "I-I'm not so sure about that..."
+    doc "I..."
+    doc "I'm not so sure about that..."
     doc "{i} Amiya, help me... {/i}"
 
     hide teq normal
@@ -357,8 +383,6 @@ label start:
     teq "Keep up the pace, Doctor."
     teq "You are doing well."
 
-    # i think it's better if we add more narration as to not make the game feels rushed?
-    # awlaallala i have no idea
 
     "Just a bit more..."
     "Everything is going well..."
@@ -368,10 +392,22 @@ label start:
     "Stay here and now."
     "With him guiding you."
 
-    doc "!!!!!"
+    pause 0.5
 
-    "Suddenly, my leg just gave away."
-    "I stagger around, bouncing my standing leg left and right trying to keep my balance."
+    "Oh no..."
+
+    doc "!!!!!"
+    
+    "A sudden numbness,"
+    "A sudden weakness,"
+    "Unexpectedly."
+    
+    doc "{i} Oh crap!{/i}"
+    doc "{i} Should've seen it coming!{/i}"
+    
+    "Just like that,"
+    "The world in my vision tumbling sideways."
+    "The sudden absence of the control to my leg is rapidly throwing my body off balance."
     
     doc "{i} Oh crap, I'm going to fall!{/i}"
     
@@ -380,6 +416,8 @@ label start:
     "Uhhh, relax my muscles.."
     "Bend my knees..."
     "And roll to the side-"
+
+    pause 0.5
 
     myst "Careful there!"
 

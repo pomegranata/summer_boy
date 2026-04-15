@@ -7,6 +7,9 @@ label start:
     define def_pos = Position(xalign=0.5, yalign=-0.2)
 
     "Friday. 3:43 PM. Clear."
+
+    play sound "typing.ogg"
+
     "Meeting with Dr. Kal'tsit and Amiya..."
     "Check."
     "Strategy preparation for next week..."
@@ -16,6 +19,8 @@ label start:
     "And last..."
     "Stationary Security Service..."
     "Check."
+
+    stop sound
 
     scene bg corridor with dissolve
 
@@ -31,7 +36,7 @@ label start:
 
     doc "Uhhh, what should I do now?"
     doc "I have nothing to do for the rest of the day..."
-    doc "I guess I can just wander around the ship for a bit."
+    doc "I guess I can just wander around the ship for a bit?"
     doc "Maybe something interesting will happen?"
     doc "Or maybe I can just have a nice walk and enjoy the landship's decorations?"
     doc "To the upper deck, maybe?"
@@ -43,10 +48,10 @@ label start:
     doc "Hmm..."
     doc "What should I do..."
 
-    "The changing scenery of the landship's walls and windows passing by."
-    "Greyish metal walls."
-    "Orange painted strips."
-    "Hanging neon lights."
+    "The changing scenery of the landship's walls and windows are passing by in motion."
+    "Ashy high metal walls."
+    "Apricot painted strips."
+    "Dangling neon lights."
     "And monitor screens showing the landship's status, news, weather forecast, and any kind of information for every residents."
     "The usual chatter of the speakers providing a white background noise to the wandering thoughts."
 
@@ -56,7 +61,7 @@ label start:
     doc "{i} Me...{/i}"
     doc "{i} Forgetting how to spend my free time. {/i}"
     doc "{i} Or any kind of activities that is not paperwork-related... {/i}"
-    doc "{i} I'm so out of touch with the world around me... {/i}"
+    doc "{i} I'm so out of touch with the world around me! {/i}"
     doc "That's a scary thought!"
 
     stop music
@@ -114,18 +119,20 @@ label start:
     show teq normal at def_pos
 
     teq "What? Did Amiya scold you again?"
-    teq "Or did Dr. Kal'tsit give you a hard time again?"
-    teq "Or a bad day?"
+    teq "Or did Dr. Kal'tsit give you another hard lecture?"
+    teq "Or maybe some originium slugs decided to chew on your paperwork?"
 
     doc "No, no, no."
     doc "It's nothing like that..."
     doc "I did meet Amiya and Dr. Kal'tsit today."
-    doc "But they didn't scold me or gave me a hard time at all."
-    doc "I was just busy wondering what should I do..."
+    doc "But Amiya didn't scold me..."
+    doc "Or Dr. Kal'tsit giving me another hard lecture at all."
+    doc "I was just busy wondering..."
+    doc "About what should I do."
     doc "I finished all of my work for the week already."
     doc "And I have nothing to do for the rest of the day..."
-    doc "{i} Honestly though, {/i}"
-    doc "{i} I don't even know about what to do for the weekends too... {/i}"
+    doc "{i} Honestly though... {/i}"
+    doc "{i} I don't even know about what to do for the weekend too. {/i}"
 
     show teq happy at def_pos
     
@@ -137,7 +144,7 @@ label start:
 
     show teq concern at def_pos
 
-    teq "I honestly don't want to you having that sad face, Doctor..."
+    teq "I honestly don't want you having that melancholic face, Doctor..."
 
     show teq thinking at def_pos
 
@@ -161,9 +168,9 @@ label start:
     doc "Really scary."
     doc "But, don't get me wrong though!"
     doc "It's just..."
-    doc "I haven't practiced my physical combat ability for a long time."
+    doc "It's been a while since the last time I did some any kind of training."
     doc "I might be a little rusty..."
-    doc "{i} Did I ever do some training at all? {/i}"
+    doc "{i} Did I even do some workout all? {/i}"
 
     show teq happy at def_pos
 
@@ -184,18 +191,18 @@ label start:
     
     teq "Anyway..."
 
+    show bg corridor with vpunch
+
     doc "!!!!!"
 
-
-    play sound "<loop 2 to 6>running.wav"
-
     "Tequila took my hand and pulled me to his side."
-    "Dragging me away from the landship corridor."
 
     stop music
+    play sound "running.ogg" loop
     scene bg black screen with dissolve
     hide teq normal
 
+    "Dragging me away from the landship corridor."
     "Rushing our way out to the training compound."
     "Sucessfully pulling me out of my wandering thoughts."
 
@@ -210,7 +217,7 @@ label start:
     teq "Because from what I see..."
     teq "You're such a bad liar, Doctor!"
     teq "Just loosen up a bit and have fun with me!"
-    teq "I will ensure you experience the greatest joy of your life!"
+    teq "I will ensure you to experience the greatest joy of your life!"
 
     doc "I..."
     doc "I'm not so sure about that..."
@@ -219,7 +226,7 @@ label start:
     hide teq normal
 
     "After running along for a moment, Tequila comes in halt when we reached the Training Compund."
-    "Not even the closed door could stop his radiant energy."
+    "Not even the closed door could stop his radiant excitement energy."
     "He opens the door and walks in without even knocking,"
     "As if he lives in this place."
     "Then he stops abruptly so suddenly."
@@ -227,8 +234,6 @@ label start:
     play sound "thud.wav"
     scene bg training with vpunch
     show teq normal at def_pos with vpunch
-
-    "{i} Thud! {/i}"
 
     doc "{i} That was twice for this afternoon already... {/i}"
 
@@ -250,7 +255,8 @@ label start:
     doc "{i} Inhale...{/i}"
     doc "{i} Exhale...{/i}"
     doc "{i} I can do this. I can do this. I can do this...{/i}"
-    doc "{i} It's just a friendly duel, right? It's not like he's going to actually hurt me or anything...{/i}"
+    doc "{i} It's just a friendly duel, right? {/i}"
+    doc "{i} It's not like he's going to actually hurt me or anything... {/i}"
     
     show teq normal at def_pos
 
@@ -271,7 +277,7 @@ label start:
 
     doc "No..."
     doc "I won't back down from a challenge now."
-    doc "{i} As if I could outran him if he truly chase me... {/i}"
+    doc "{i} As if I could outrun him if he truly chase me... {/i}"
     doc "I'm ready to do this, Tequila."
     doc "Come on, bring it on!"
 
@@ -395,6 +401,7 @@ label start:
     pause 0.5
 
     "Oh no..."
+
 
     doc "!!!!!"
     
@@ -567,13 +574,14 @@ label start:
         teq "Shoot your shot, Doctor."
         teq "I'm all ears."
 
-        doc "Tonight will be my off duty."
+        doc "Tonight will be my off working hours."
         doc "So, please.."
         doc "Just call my name."
         doc "Not Doctor nor anything."
-        doc "Just me. As myself."
+        doc "Just me."
+        doc "As myself."
         
-        $ player_name = renpy.input("I am... ", length=32)
+        $ player_name = renpy.input("{i} I am... {/i}", length=32)
         $ player_name = player_name.strip()
 
         teq "Easy enough."
@@ -678,6 +686,7 @@ label start:
         doc "{i} Did I do something right? {/i}"
         doc "{i} Rejecting his offer like that? {/i}"
         doc "{i} And lied to him in doing so? {/i}"
+
         "This is me who you despise so much,"
         "Doctor of Rhodes Island."
         "You can't get away from your your past."

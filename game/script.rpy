@@ -8,7 +8,7 @@ label start:
 
     "Friday. 3:43 PM. Clear."
 
-    play sound "typing.ogg"
+    play sound "typing.ogg" loop
 
     "Meeting with Dr. Kal'tsit and Amiya..."
     "Check."
@@ -153,15 +153,24 @@ label start:
     show teq normal at def_pos
 
     teq "How about this..."
-    teq "I'm going to the training compound to test out my newly polished sword."
-    teq "And keeping shape of my swordsmanship."
+    teq "I'm about to go to the training ground. To give my sword a test run."
+
+    show teq happy at def_pos
+
+    teq "I just polished it and I want to make sure it could cut down some dummies before I step on the battlefield."
+    
+    show teq normal
+
+    teq "And also keeping shape of my swordsmanship."
     
     show teq happy at def_pos
 
-    teq "Maybe I can teach you one or two moves."
-    teq "In case you need to defend yourself on the battlefield."
+    teq "Maybe I can teach you one or two moves while we are there."
 
     show teq normal at def_pos
+    
+    teq "In case you need to defend yourself on the battlefield."
+    teq "So, what do you say, Doc?"
 
     doc "That sounds..."
     doc "Scary."
@@ -228,7 +237,9 @@ label start:
     "After running along for a moment, Tequila comes in halt when we reached the Training Compund."
     "Not even the closed door could stop his radiant excitement energy."
     "He opens the door and walks in without even knocking,"
-    "As if he lives in this place."
+
+    pause 0.5
+    
     "Then he stops abruptly so suddenly."
 
     play sound "thud.wav"
@@ -359,9 +370,9 @@ label start:
     
     doc "{i} It's not a few seconds left. It's eternity! {/i}"
 
-    show teq happy at def_pos
+    pause 1.0
 
-    pause 0.5
+    show teq happy at def_pos
 
     teq "All right, you can drop your leg now."
 
@@ -377,8 +388,8 @@ label start:
 
     hide teq normal at def_pos
 
-    "Slowly,."
-    "And surely, I managed to lift my foot slightly off the ground."
+    "Slowly..."
+    "And surely, I managed to lift my left foot slightly off the ground."
 
     show teq happy at def_pos
 
@@ -389,14 +400,15 @@ label start:
     teq "Keep up the pace, Doctor."
     teq "You are doing well."
 
+    hide teq normal
 
-    "Just a bit more..."
-    "Everything is going well..."
-    "Everything will be alright."
-    "Take a deep breath."
-    "And focus on the moment."
-    "Stay here and now."
-    "With him guiding you."
+    "{i} Just a bit more... {/i}"
+    "{i} Everything is going well... {/i}"
+    "{i} Everything will be alright. {/i}"
+    "{i} Take a deep breath. {/i}"
+    "{i} And focus on the moment. {/i}"
+    "{i} Stay here and now. {/i}"
+    "{i} With him guiding you. {/i}"
 
     pause 0.5
 
@@ -411,6 +423,8 @@ label start:
     
     doc "{i} Oh crap!{/i}"
     doc "{i} Should've seen it coming!{/i}"
+
+    scene bg black screen
     
     "Just like that,"
     "The world in my vision tumbling sideways."
@@ -427,14 +441,16 @@ label start:
     pause 0.5
 
     myst "Careful there!"
+    
+    doc "Ah! What the-"
 
-    "As I prepare myself to land on the concrete surface of the Training Compund..."
     "I feel something firm and solid on my back."
     "The lingering scent of sun-warmed skin vaguely introducing themselves into my sense of smell."
     "A warm pair of strong arms securing my unsteady figure."
 
     stop music fadeout 0.5
 
+    scene bg training with vpunch
     play sound "thud.wav"
     "{i} Thud! {/i}"
 
@@ -454,12 +470,12 @@ label start:
     doc "Umm..."
     doc "I-I'm alright..."
     doc "{i} What is this unusual feeling... {/i}"
-    doc "{i} A creeping fervor trailing my cheeks...{/i}"
+    doc "{i} A creeping fervor...{/i}"
     
     "Cautiously, he lift my upper body up."
     "Slowly until my feet standing upright."
     "Yet still, he keep his one arm around my back."
-    "Offering his own way of a nonvocal support."
+    "Offering his own way of a slient yet steady support."
 
     show teq concern at def_pos
     
@@ -482,7 +498,7 @@ label start:
     
     teq "Still, Doctor..."
     teq "It was my idea to bring you all the way here."
-    teq "That was also my idea to have you do all those warm-ups."
+    teq "That was also my idea to have you do all those stretches."
     teq "I'm the one responsible for your injury."
 
     doc "Tequila, don't say that..."
@@ -493,7 +509,7 @@ label start:
     
     show teq happy at def_pos
 
-    teq "You should be a little bit stricter to your operators, Doc."
+    teq "You should be a little bit more stern to your operators, Doc."
     teq "Including me."
 
     show teq normal at def_pos
@@ -504,13 +520,13 @@ label start:
     doc "{i} The Ghost of Babel days are over. {/i}"
     doc "{i} And I intend to keep it that way. {/i}"
     doc "{i} For the sake of the new future of everyone. {/i}"
-    doc "{i} This Terra is ours. {/i}"
-    doc "{i} And these days are Rhodes Island's days. {/i}"
 
     teq "That is a very kind of you, Doctor."
-    teq "As someone as important on this ship like you,"
-    teq "Yet still being so tuned in to how everyone perception about you."
-    teq "Just so that they feel safe around you."
+    teq "As someone influential on this ship like you,"
+    teq "Yet you still care so much about everyone's feelings and comfort around you."
+    teq "You try your hardest everyday..."
+    teq "To make sure everyone on this ship feels safe."
+    teq "Just so they feel welcomed."
 
     pause 0.5
 
@@ -529,9 +545,15 @@ label start:
 
     teq "Whenever you're free."
     teq "Anything you want, however you want."
-    teq "Specially, in my bar."
+    teq "Exclusively,"
+    teq "In my bar."
     teq "You call my name and I'll go to your table right away."
-    teq "As long as you can handle the alcohol."
+    teq "Any kind of drinks,"
+    teq "Whiskey, Champagne, Mojito, or Martini."
+    teq "Smoothies, Sparkling Lemonade, Virgin Mojito, or Ginger Ale."
+    teq "Everything is on the house for you, Doctor."
+    teq "Just pick whatever you want or like,"
+    teq "And I'll make it for you right away."
 
     show teq normal at def_pos
 
@@ -620,6 +642,8 @@ label start:
         doc "{i} New people. {/i}"
         doc "{i} New operators. {/i}"
         doc "{i} New memories. {/i}"
+        doc "{i} This Terra is ours. {/i}"
+        doc "{i} And these days are Rhodes Island's days. {/i}"
         doc "Alright, let's do this!"
 
         return

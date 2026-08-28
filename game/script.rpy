@@ -334,7 +334,7 @@ label start:
     teq "It looks like you're enjoying yourself there, Doctor."
 
     doc "I am."
-    doc "I can really feel all these tensions melting away."
+    doc "I can really feel the tension in all these muscles and joints slowly easing away."
 
     show teq happy at def_pos
 
@@ -413,7 +413,6 @@ label start:
     pause 0.5
 
     "Oh no..."
-
 
     doc "!!!!!"
     
@@ -522,7 +521,7 @@ label start:
     doc "{i} For the sake of the new future of everyone. {/i}"
 
     teq "That is a very kind of you, Doctor."
-    teq "As someone influential on this ship like you,"
+    teq "As someone on this ship like you,"
     teq "Yet you still care so much about everyone's feelings and comfort around you."
     teq "You try your hardest everyday..."
     teq "To make sure everyone on this ship feels safe."
@@ -579,7 +578,7 @@ label start:
     menu:
         "Spend the night with him":
             jump accpet_date
-        "Spend the night...":
+        "Spend the night...?":
             jump decline_date
 
     label accpet_date:
@@ -598,12 +597,13 @@ label start:
 
         doc "Tonight will be my off working hours."
         doc "So, please.."
-        doc "Just call my name."
+        doc "Just call me by my name."
         doc "Not Doctor nor anything."
+        doc "My real name."
         doc "Just me."
         doc "As myself."
         
-        $ player_name = renpy.input("{i} I am... {/i}", length=32)
+        $ player_name = renpy.input("{i}I am... {/i}", length=32)
         $ player_name = player_name.strip()
 
         teq "Easy enough."
@@ -625,9 +625,14 @@ label start:
         doc "{i} For my operator to easily express themselves around me. {/i}"
         doc "{i} For him to keep smiling so brightly. {/i}"
         doc "{i} For him to keep radiating his endless positive energy. {/i}"
-        
+
+        show teq normal at def_pos
+
         teq "Now, rest your leg for a bit, Doctor."
         teq "And maybe put on some ice bath for ten to twenty minutes."
+
+        show teq happy at def_pos
+
         teq "And see you tonight in my bar."
         teq "I'll be waiting for you, [player_name]."
 
@@ -635,7 +640,7 @@ label start:
 
         "A quiet footsteps echoing through the corridor."
         "The softness of summer breeze lingers through the landship's windows."
-        "The early summer greets the everyone on the Rhodes Island with the joy and happyness."
+        "The early summer greets the everyone on the Rhodes Island with the joy and happiness."
 
         doc "{i} Another season... {/i}"
         doc "{i} New tasks. {/i}"
@@ -650,7 +655,14 @@ label start:
 
     label decline_date:
 
+        stop music
+
+        doc "I..."
+        doc "I'm sorry, Tequila."
+
         play music distress
+
+        show teq surprise viewer at def_pos
 
         "The air around the landship feels pressurizingly heavy."
         "The heavy kind of air before the storm."
@@ -665,12 +677,6 @@ label start:
         "Precipitation is predicted to be heavy in the next few days."
         "And in between, "
         "The start of the summer's heatwaves is expected to arrives earlier than usual this year."
-
-        
-        doc "I..."
-        doc "I'm sorry, Tequila."
-
-        show teq surprise viewer at def_pos
 
         doc "I don't think..."
         doc "I can go for a night out tonight..."
